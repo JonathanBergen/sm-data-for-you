@@ -13,6 +13,21 @@
               {{ form.query }}
           </fieldset>
 
+        <fieldset class="form-field">
+            {{ form.start_date.label }}
+            {{ form.start_date }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.end_date.label }}
+            {{ form.end_date }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.num_tweets.label }}
+            {{ form.num_tweets }}
+        </fieldset>
+
           {{ form.submit }}
 
       </form>
