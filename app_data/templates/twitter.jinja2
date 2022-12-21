@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+    <div class="form-wrapper">
+      <h2 class="title">Contact</h2>
+
+      <form method="POST" action="{{ url_for('twitter') }}">
+
+          <fieldset class="form-field">
+              {{ form.query.label }}
+              {{ form.query }}
+          </fieldset>
+
+          {{ form.submit }}
+
+      </form>
+    </div>
+
+{% endblock %}
