@@ -8,6 +8,8 @@
 
       <form method="POST" action="{{ url_for('twitter') }}">
 
+        {{ form.csrf_token }}
+
           <fieldset class="form-field">
               {{ form.query.label }}
               {{ form.query }}
