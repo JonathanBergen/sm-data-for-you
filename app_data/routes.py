@@ -22,7 +22,7 @@ app.config['WTF_CSRF_SECRET_KEY'] = 'mysupersecretkey'
 csrf.init_app(app)
 
 # Since this app will only have one page, we can just define the route here
-@app.route("/", methods=["GET", "POST"])
+@app.route("/twitter", methods=["GET", "POST"])
 
 # The function that will be called when the user visits the page
 def twitter():
@@ -36,6 +36,7 @@ def twitter():
         # print the first 10 tweets to the console
         for tweet in tweets[:10]:
             print(tweet, flush=True)
+            print("THIS twit IS WORKING", flush=True)
     else:
         print(form.errors)
     return render_template(
@@ -44,3 +45,19 @@ def twitter():
         template="form-template"
     )
 
+# # The function that will be called when the user submits the form
+# @app.route("/submit", methods=["GET", "POST"])
+# def submit():
+#     form = TwitterForm()
+
+#     # If the form is submitted and passes validation, run the search with the given parameters
+#     if form.validate_on_submit():
+#         scraper = Scraper(form.query.data, form.start_date.data, form.end_date.data, form.num_tweets.data)
+#         tweets = scraper.scrape()
+
+#         # print the first 10 tweets to the console
+#         for tweet in tweets[:10]:
+#             print(tweet, flush=True)
+#             print("THIS submit IS WORKING", flush=True)
+#     else:
+#         print(form.errors)
